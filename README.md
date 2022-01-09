@@ -4,8 +4,9 @@
 
 [comment]: <> (youtube-audio-downloader is an app that converts youtube videos to audio files.)
 
-The main reason I started this project is because I wanted some Spotify playlist to my phone, so I can listen to when I'm driving without spending data. Of course I don't have 
-Spotify premium (because I'm broke), so I had to download all the music. So, that's what this app does, youtube-audio-downloader downloads will help you download a lot of music 
+The main reason I started this project is because I wanted some Spotify playlist to my phone, so I can listen to when I'm driving without spending data. Unfotunately, I don't 
+have 
+Spotify premium (because I'm broke), so I had to download all the music. So, that's what this app does, youtube-audio-downloader will help you download a lot of music 
 fast.
 
 ## How to use
