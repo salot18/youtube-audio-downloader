@@ -854,7 +854,7 @@ def settings_frame():
   )
 
   theme_label = ctk.CTkLabel(master=settings_box,
-    text="Dark Theme:",
+    text="dark theme:",
     corner_radius=0,
     fg_color=COLORS["surface 1"],
     text_font=("centurty gothic", 14),
