@@ -1,6 +1,6 @@
 [comment]: <> (# youtube-audio-downloader)
 
-![youtube-audio-downloader](./img/banner-readme.png)
+![youtube-audio-downloader](./img/banner.png)
 
 [comment]: <> (youtube-audio-downloader is an app that converts youtube videos to audio files.)
 
