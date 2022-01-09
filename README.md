@@ -1,5 +1,7 @@
-# youtube-audio-downloader
+[comment]: <> (# youtube-audio-downloader)
+
 ![youtube-audio-downloader](./img/banner-readme.png)
+
 [comment]: <> (youtube-audio-downloader is an app that converts youtube videos to audio files.)
 
 The main reason I started this project is because I wanted to download a lot of music fast. So, that's what this app does, youtube-audio-downloader downloads a lot of music fast.
