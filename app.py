@@ -90,7 +90,7 @@ COLORS = {
 
 root = ctk.CTk()
 root.iconbitmap('./img/logo.ico')
-root.title("Youtube Audio Downloader by salot")
+root.title("youtube-audio-downloader by salot")
 root.geometry(str(WIDTH) + "x" + str(HEIGHT))
 
 ### Functions ###
@@ -143,7 +143,7 @@ def toggle_theme():
   save_settings()
 
 def change_save_path():
-  temp = filedialog.askdirectory(parent=root, title="Save Path", initialdir=SETTINGS["save path"])
+  temp = filedialog.askdirectory(parent=root, title="save path", initialdir=SETTINGS["save path"])
   if temp:
     SETTINGS["save path"] =  temp
     WIDGETS_SETTINGS["path label"][-1].configure(text=SETTINGS["save path"])
@@ -190,9 +190,9 @@ def load_song():
       WIDGETS_DAS["load button"][-1].place_forget()
       WIDGETS_DAS["save as button"][-1].place(relx=0.5, rely=0.7, anchor='center')
     except:
-      WIDGETS_DAS["found label"][-1].configure(text="Something went wrong. Try again with a different url.", fg_color=COLORS["surface 2"])
+      WIDGETS_DAS["found label"][-1].configure(text="something went wrong\n\ntry again with a different url", fg_color=COLORS["surface 2"])
   else:
-    WIDGETS_DAS["found label"][-1].configure(text="Invalid Url", fg_color=COLORS["surface 2"])
+    WIDGETS_DAS["found label"][-1].configure(text="invalid url", fg_color=COLORS["surface 2"])
 
 def save_as_song():
   fn = WIDGETS_DAS["url input"][-1].get()
@@ -207,7 +207,7 @@ def save_as_song():
   try:
     SONG_URL[0].streams.get_audio_only("mp4").download(output_path=SETTINGS["save path"], filename=check_valid_fn(fn) + ".mp3")
   except:
-    WIDGETS_DAS["found label"][-1].configure(text=SONG_URL[-1].title + " could not be downloaded\n\nTry a different url", fg_color=COLORS["surface 2"])
+    WIDGETS_DAS["found label"][-1].configure(text="\"" + SONG_URL[-1].title + "\" could not be downloaded\n\nTry a different url", fg_color=COLORS["surface 2"])
 
   SONG_URL.clear()
 
@@ -238,10 +238,10 @@ def load_list():
       WIDGETS_DAP["save as button"][-1].place(relx=0.5, rely=0.7, anchor='center')
     except:
       WIDGETS_DAP["found label"][-1].configure(text="", fg_color=COLORS["surface 2"])
-      WIDGETS_DAP["found label"][-1].configure(text="Something went wrong. Remember, the playlist must be public or unlisted.") 
+      WIDGETS_DAP["found label"][-1].configure(text="something went wrong\n\nremember, the playlist must be public or unlisted") 
   else:
     WIDGETS_DAP["found label"][-1].configure(text="", fg_color=COLORS["surface 2"])
-    WIDGETS_DAP["found label"][-1].configure(text="Invalid Url")
+    WIDGETS_DAP["found label"][-1].configure(text="invalid url")
 
 def save_as_list():
   fn = WIDGETS_DAP["url input"][-1].get()
@@ -260,7 +260,7 @@ def save_as_list():
       SONG_ERROR.append(video.title)
 
     if SONG_ERROR != []:
-      txt = "These songs could not be downloaded:\n\n"
+      txt = "these songs could not be downloaded:\n\n"
 
       for song in SONG_ERROR:
         txt += song + "\n"
@@ -287,7 +287,7 @@ def main_menu_frame():
   title_frame = ctk.CTkFrame(master=root)
 
   title_label = ctk.CTkLabel(master=title_frame,
-    text="Youtube Audio Downloader",
+    text="youtube-audio-downloader",
     corner_radius=8,
     fg_color=COLORS["primary"],
     text_font=("centurty gothic", 32, "bold"),
@@ -304,7 +304,7 @@ def main_menu_frame():
   )
 
   download_button = ctk.CTkButton(master=main_menu_frame,
-    text="Download",
+    text="download",
     command=download_frame,
     corner_radius=5,
     border_width=2,
@@ -320,7 +320,7 @@ def main_menu_frame():
   )
 
   settings_button = ctk.CTkButton(master=main_menu_frame,
-    text="Settings",
+    text="settings",
     command=settings_frame,
     corner_radius=5,
     border_width=2,
@@ -336,7 +336,7 @@ def main_menu_frame():
   )
 
   exit_button = ctk.CTkButton(master=main_menu_frame,
-    text="Exit",
+    text="exit",
     command=root.destroy,
     corner_radius=5,
     border_width=2,
@@ -395,7 +395,7 @@ def download_frame():
   )
 
   frame_title = ctk.CTkLabel(master=bar,
-    text="Download",
+    text="download",
     corner_radius=0,
     fg_color=COLORS["primary"],
     text_font=("centurty gothic", 18),
@@ -412,7 +412,7 @@ def download_frame():
   )
 
   download_a_song = ctk.CTkButton(master=download_box,
-    text="Download a Song",
+    text="download a song",
     command=download_a_song_frame,
     corner_radius=5,
     border_width=2,
@@ -428,7 +428,7 @@ def download_frame():
   )
 
   download_a_list = ctk.CTkButton(master=download_box,
-    text="Download a Playlist",
+    text="download a playlist",
     command=download_a_list_frame,
     corner_radius=5,
     border_width=2,
@@ -488,7 +488,7 @@ def download_a_song_frame():
   )
 
   frame_title = ctk.CTkLabel(master=bar,
-    text="Download a Song",
+    text="download a song",
     corner_radius=0,
     fg_color=COLORS["primary"],
     text_font=("centurty gothic", 18),
@@ -505,7 +505,7 @@ def download_a_song_frame():
   )
 
   url_label = ctk.CTkLabel(master=download_box,
-    text="Enter the url of a song:",
+    text="enter the url of a song:",
     text_font=("centurty gothic", 12, "bold"),
     text_color=COLORS["text blue red"],
     fg_color=COLORS["surface 1"],
@@ -514,7 +514,7 @@ def download_a_song_frame():
   )
 
   save_as_label = ctk.CTkLabel(master=download_box,
-    text="Save as:",
+    text="save as:",
     text_font=("centurty gothic", 12, "bold"),
     text_color=COLORS["text blue red"],
     fg_color=COLORS["surface 1"],
@@ -545,7 +545,7 @@ def download_a_song_frame():
   )
 
   load_button = ctk.CTkButton(master=download_box,
-    text="Load Song",
+    text="load song",
     command=load_song,
     corner_radius=5,
     border_width=2,
@@ -561,7 +561,7 @@ def download_a_song_frame():
   )
   
   save_as_button = ctk.CTkButton(master=download_box,
-    text="Save Song",
+    text="save song",
     command=save_as_song,
     corner_radius=5,
     border_width=2,
@@ -630,7 +630,7 @@ def download_a_list_frame():
   )
 
   frame_title = ctk.CTkLabel(master=bar,
-    text="Download a Playlist",
+    text="download a playlist",
     corner_radius=0,
     fg_color=COLORS["primary"],
     text_font=("centurty gothic", 18),
@@ -647,7 +647,7 @@ def download_a_list_frame():
   )
 
   url_label = ctk.CTkLabel(master=download_box,
-    text="Enter the url of a playlist:",
+    text="enter the url of a playlist:",
     text_font=("centurty gothic", 12, "bold"),
     text_color=COLORS["text blue red"],
     fg_color=COLORS["surface 1"],
@@ -656,7 +656,7 @@ def download_a_list_frame():
   )
 
   save_as_label = ctk.CTkLabel(master=download_box,
-    text="Save as:",
+    text="save as:",
     text_font=("centurty gothic", 12, "bold"),
     text_color=COLORS["text blue red"],
     fg_color=COLORS["surface 1"],
@@ -687,7 +687,7 @@ def download_a_list_frame():
   )
 
   load_button = ctk.CTkButton(master=download_box,
-    text="Load Playlist",
+    text="load playlist",
     command=load_list,
     corner_radius=5,
     border_width=2,
@@ -703,7 +703,7 @@ def download_a_list_frame():
   )
   
   save_as_button = ctk.CTkButton(master=download_box,
-    text="Save Playlist",
+    text="save playlist",
     command=save_as_list,
     corner_radius=5,
     border_width=2,
@@ -772,7 +772,7 @@ def settings_frame():
   )
 
   frame_title = ctk.CTkLabel(master=bar,
-    text="Settings",
+    text="settings",
     corner_radius=0,
     fg_color=COLORS["primary"],
     text_font=("centurty gothic", 18),
@@ -789,7 +789,7 @@ def settings_frame():
   )
 
   save_path_label = ctk.CTkLabel(master=settings_box,
-    text="Save Folder:",
+    text="save path:",
     corner_radius=0,
     fg_color=COLORS["surface 1"],
     text_font=("centurty gothic", 14),
