@@ -1,9 +1,8 @@
 # Imports
-import tkinter as tk
-from tkinter import filedialog
-from pytube import YouTube, Playlist
-import json
 import customtkinter as ctk
+import json
+from tkinter import filedialog, PhotoImage
+from pytube import YouTube, Playlist
 
 ### Constants ###
 
@@ -186,7 +185,7 @@ def load_song():
       SONG_URL.append(video)
       WIDGETS_DAS["url label"][-1].place_forget()
       WIDGETS_DAS["save as label"][-1].place(relx=0.05, rely=0.14)
-      WIDGETS_DAS["found label"][-1].configure(text=video.title, width=540)
+      WIDGETS_DAS["found label"][-1].configure(text=video.title, width=540, fg_color=COLORS["surface 2"])
 
       WIDGETS_DAS["load button"][-1].place_forget()
       WIDGETS_DAS["save as button"][-1].place(relx=0.5, rely=0.7, anchor='center')
@@ -380,7 +379,7 @@ def download_frame():
 
   back_button = ctk.CTkButton(master=bar,
     text="",
-    image=tk.PhotoImage(file="./img/back-button.png"),
+    image=PhotoImage(file="./img/back-button.png"),
     command=lambda: back_reset("main menu"),
     corner_radius=18,
     border_width=2,
@@ -473,7 +472,7 @@ def download_a_song_frame():
 
   back_button = ctk.CTkButton(master=bar,
     text="",
-    image=tk.PhotoImage(file="./img/back-button.png"),
+    image=PhotoImage(file="./img/back-button.png"),
     command=lambda: back_reset("download"),
     corner_radius=18,
     border_width=2,
@@ -615,7 +614,7 @@ def download_a_list_frame():
 
   back_button = ctk.CTkButton(master=bar,
     text="",
-    image=tk.PhotoImage(file="./img/back-button.png"),
+    image=PhotoImage(file="./img/back-button.png"),
     command=lambda: back_reset("download"),
     corner_radius=18,
     border_width=2,
@@ -757,7 +756,7 @@ def settings_frame():
 
   back_button = ctk.CTkButton(master=bar,
     text="",
-    image=tk.PhotoImage(file="./img/back-button.png"),
+    image=PhotoImage(file="./img/back-button.png"),
     command=lambda: back_reset("main menu"),
     corner_radius=18,
     border_width=2,
@@ -814,7 +813,7 @@ def settings_frame():
 
   unhovered_change_path_button_dark = ctk.CTkButton(master=settings_box,
     text="",
-    image=tk.PhotoImage(file="./img/edit-button-unhovered-dark.png"),
+    image=PhotoImage(file="./img/edit-button-unhovered-dark.png"),
     command=change_save_path,
     corner_radius=0,
     border_width=0,
@@ -828,7 +827,7 @@ def settings_frame():
 
   unhovered_change_path_button_light = ctk.CTkButton(master=settings_box,
     text="",
-    image=tk.PhotoImage(file="./img/edit-button-unhovered-light.png"),
+    image=PhotoImage(file="./img/edit-button-unhovered-light.png"),
     command=change_save_path,
     corner_radius=0,
     border_width=0,
@@ -842,7 +841,7 @@ def settings_frame():
 
   hovered_change_path_button = ctk.CTkButton(master=settings_box,
     text="",
-    image=tk.PhotoImage(file="./img/edit-button-hovered.png"),
+    image=PhotoImage(file="./img/edit-button-hovered.png"),
     command=change_save_path,
     corner_radius=0,
     border_width=0,
